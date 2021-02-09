@@ -10,7 +10,7 @@ While many tools are available to _check_ contrast, but efficiently picking an a
 
 Additionally, everyone benefits from documentation about color token contrast to ensure tokens are _used_ accessibly.
 
-`a11y-color-tokens` lets you focus on just selecting the base colors while taking care of generating contrast-safe complementary tones to ensure you meet this important success criteria. A unique feature of this project is that it scales the original color value for a more pleasing visual contrast vs only returning either white or black. (_Don't worry - you're able to override the contrast color if needed!_)
+`a11y-color-tokens` lets you focus on just selecting the base colors while taking care of generating contrast-safe complementary tones to ensure you meet [this important success criterion](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). A unique feature of this project is that it scales the original color value for a more pleasing visual contrast vs only returning either white or black. (_Don't worry - you're able to override the contrast color if needed!_)
 
 > 💡 "Tokens" comes from the design system world terminology of "design tokens" which you can [learn more about from the original creator, Jina Anne](https://www.smashingmagazine.com/2019/11/smashing-podcast-episode-3/).
 
