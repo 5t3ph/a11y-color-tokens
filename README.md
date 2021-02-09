@@ -30,7 +30,7 @@ The default options generate individual Sass variables, as well as a map of thos
 
 Sass variables and the map include the `!default` flag as an additional way to extend, scale, and share your tokens.
 
-**[View the sample default output >](https://github.com/5t3ph/a11y-color-tokens/blob/main/sass/_color-tokens_.scss)**
+**[View the sample default output >](https://github.com/5t3ph/a11y-color-tokens/blob/main/sass/_color-tokens.scss)**
 
 Alternatively, pass `"css"` as the `tokenOutputFormat` to only output CSS custom properties within the `:root` selector.
 
@@ -164,7 +164,7 @@ Change the prefix of `color-` by setting a new value, or use `--no-tokenPrefix` 
 a11y-color-tokens --tokenPrefix='theme-'
 ```
 
-## Prevent CSS custom properties output
+### Prevent CSS custom properties output
 
 This is handled with `includeCustomProperties` and can be removed with:
 
@@ -172,7 +172,7 @@ This is handled with `includeCustomProperties` and can be removed with:
 a11y-color-tokens --no-includeCustomProperties
 ```
 
-## Remove the `_color-token-contrast.md` documentation
+### Remove the `_color-token-contrast.md` documentation
 
 This is handled with `compatibilityDocs` and can be removed with:
 
@@ -180,7 +180,7 @@ This is handled with `compatibilityDocs` and can be removed with:
 a11y-color-tokens --no-compatibilityDocs
 ```
 
-## Change output location of `_color-token-contrast.md`
+### Change output location of `_color-token-contrast.md`
 
 The default places the docs in the same directory defined for `outputDirPath`.
 
