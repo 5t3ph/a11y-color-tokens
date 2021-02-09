@@ -1,0 +1,35 @@
+/* 🛑 STOP!
+  Do not change this file directly.
+  Modify colors in color-tokens.js
+ */
+
+$color-primary: rebeccapurple !default;
+$color-on-primary: #CEB3E9 !default;
+$color-secondary: rgb(95, 165, 26) !default;
+$color-on-secondary: #113400 !default;
+$color-tertiary: hsl(245, 70%, 30%) !default;
+$color-on-tertiary: #918BD3 !default;
+$color-surface: #f9f9f9 !default;
+$color-on-surface: #494848 !default;
+
+$color-tokens: (
+  "color-primary": $color-primary,
+  "color-on-primary": $color-on-primary,
+  "color-secondary": $color-secondary,
+  "color-on-secondary": $color-on-secondary,
+  "color-tertiary": $color-tertiary,
+  "color-on-tertiary": $color-on-tertiary,
+  "color-surface": $color-surface,
+  "color-on-surface": $color-on-surface
+) !default;
+
+@mixin color-tokens() {
+  --color-primary: #{$color-primary};
+  --color-on-primary: #{$color-on-primary};
+  --color-secondary: #{$color-secondary};
+  --color-on-secondary: #{$color-on-secondary};
+  --color-tertiary: #{$color-tertiary};
+  --color-on-tertiary: #{$color-on-tertiary};
+  --color-surface: #{$color-surface};
+  --color-on-surface: #{$color-on-surface};
+}
