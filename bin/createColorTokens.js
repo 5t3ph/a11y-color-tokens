@@ -6,6 +6,7 @@ const a11yColor = require("a11ycolor");
 const Color = require("color");
 const options = require("yargs-parser")(process.argv.slice(2));
 
+const cssOutputFilename = "color-tokens.css";
 const defaults = {
   outputDirPath: "sass",
   outputFilename: "_color-tokens.scss",
@@ -185,6 +186,8 @@ const generateContrastDocs = (colors) => {
     }
   }
 
+  const filename =
+    tokenOutputFormat === "sass" ? outputFilename : cssOutputFilename;
   let themeColorsFilePath = path.resolve(
     __dirname,
     fs.realpathSync(outputDirPath)
@@ -193,11 +196,9 @@ const generateContrastDocs = (colors) => {
     console.log("Invalid outputDirPath provided");
     process.exit(1);
   }
-  fs.writeFileSync(
-    `${themeColorsFilePath}/${outputFilename}`,
-    themeColorOutput,
-    { flag: "w" }
-  );
+  fs.writeFileSync(`${themeColorsFilePath}/${filename}`, themeColorOutput, {
+    flag: "w",
+  });
 
   if (compatibilityDocs) {
     const docs = generateContrastDocs(colors);
