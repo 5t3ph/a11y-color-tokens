@@ -135,11 +135,22 @@ const generateContrastDocs = (colors) => {
     colors.push({ name: `${prefix}${name}`, color });
 
     const contrastRatio = ratioKey === "large" ? 3 : 4.5;
+    const isHSL = Color(color).object().h;
+    const alphaRE = RegExp("^[a-zA-Z]+$", "i");
+    const isNamedColor = alphaRE.test(color);
+
     let onColorValue = onColor;
     if (onColor !== false) {
       let warn = false;
       if (!onColorValue) {
         onColorValue = onColorContrast(Color(color).hex(), ratioKey);
+        // Convert back to RGB
+        onColorValue =
+          !isHSL && !color.includes("#") && !isNamedColor
+            ? Color(onColorValue).rgb()
+            : onColorValue;
+        // Convert back to HSL
+        onColorValue = isHSL ? Color(onColorValue).hsl() : onColorValue;
       } else {
         warn =
           checkContrast(onColorValue, color) >= contrastRatio ? false : true;
