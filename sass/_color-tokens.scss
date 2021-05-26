@@ -12,6 +12,8 @@ $color-on-tertiary: hsl(245, 45%, 68.6%) !default;
 $color-surface: #f9f9f9 !default;
 $color-on-surface: #494848 !default;
 
+$base-color-tokens: ("primary", "secondary", "tertiary", "surface");
+
 $color-tokens: (
   "color-primary": $color-primary,
   "color-on-primary": $color-on-primary,

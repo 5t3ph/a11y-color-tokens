@@ -16,6 +16,7 @@ const defaults = {
   tokenPrefix: "color-",
   compatibilityDocs: true,
   compatibilityDocsPath: "outputDirPath",
+  compatibilityDocsTitle: "Color Token Contrast",
   includeCustomProperties: true,
   customPropertiesFormat: "mixin", // || "root"
 };
@@ -29,6 +30,7 @@ const {
   tokenPrefix,
   compatibilityDocs,
   compatibilityDocsPath,
+  compatibilityDocsTitle,
   includeCustomProperties,
   customPropertiesFormat,
 } = {
@@ -106,7 +108,8 @@ const colorOutput = (colors, prefix, eol, join, type) => {
 };
 
 const generateContrastDocs = (colors) => {
-  let compatibilityResults = "# Contrast Safe Combinations\n\n";
+  let compatibilityResults = `---\ntitle: ${compatibilityDocsTitle}\n---\n\n`;
+  compatibilityResults += `# ${compatibilityDocsTitle}\n\n`;
   compatibilityResults +=
     "> The following are contrast safe combinations as calculated for _normal_ text based on WCAG AA 4.5\n";
   colors.map(({ name, color }) => {
@@ -167,6 +170,10 @@ const generateContrastDocs = (colors) => {
 
   if (tokenOutputFormat === "sass") {
     tokenOutput = colorOutput(colors, "$", " !default;", "\n");
+
+    tokenOutput += `\n\n$base-${sassOutputName}: (${themeColors
+      .map(({ name }) => `"${name}"`)
+      .join(", ")});`;
 
     tokenOutput += `\n\n$${sassOutputName}: (
   ${colorOutput(colors, '"', "", ",\n  ", "map")}
