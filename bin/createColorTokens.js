@@ -109,7 +109,6 @@ const colorOutput = (colors, prefix, eol, join, type) => {
 
 const generateContrastDocs = (colors) => {
   let compatibilityResults = `---\ntitle: ${compatibilityDocsTitle}\n---\n\n`;
-  compatibilityResults += `# ${compatibilityDocsTitle}\n\n`;
   compatibilityResults +=
     "> The following are contrast safe combinations as calculated for _normal_ text based on WCAG AA 4.5\n";
   colors.map(({ name, color }) => {
