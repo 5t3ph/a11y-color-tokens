@@ -1,6 +1,6 @@
 {
   "name": "a11y-color-tokens",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Generate accessible complementary text or UI colors as Sass variables and/or CSS custom properties from your base color tokens.",
   "main": "bin/createColorTokens.js",
   "scripts": {
@@ -37,6 +37,6 @@
   "dependencies": {
     "a11ycolor": "^2.0.9",
     "color": "^4.2.3",
-    "yargs-parser": "^21.0.1"
+    "yargs-parser": "^21.1.1"
   }
 }
